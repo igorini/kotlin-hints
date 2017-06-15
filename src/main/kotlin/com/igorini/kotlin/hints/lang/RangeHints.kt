@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.lang
 
-// [Iterate up-to some value but not including it] -> Use `until` operator
+// [Iteration up to an exclusive upper limit] -> Use `until` operator
 
 val limit = 10
 
