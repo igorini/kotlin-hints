@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.lang
 
-// [Iteration up to an exclusive upper limit] -> Use `until` operator
+// [Exclusive upper limit] -> Use `until` operator
 
 const val LIMIT = 10
 
