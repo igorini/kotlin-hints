@@ -10,6 +10,10 @@ This project attempts to list the patterns which are not covered by the above to
 
 Most of the examples are taken from the [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)
 
+---
+
+**Table of Contents**
+
    * [kotlin-hints](#kotlin-hints)
       * [Ranges](#ranges)
          * [Exclusive upper limit](#exclusive-upper-limit)
@@ -30,3 +34,4 @@ for (i in 1..(LIMIT - 1)) println(i)
 // [TO]
 for (i in 1 until LIMIT) println(i)
 ```
+
