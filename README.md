@@ -1,5 +1,10 @@
-# kotlin-hints
-A collection of Kotlin patterns and hints.
+#  kotlin-hints
+
+[TOC]
+
+## About
+
+kotlin-hints is a collection of Kotlin patterns and hints.
 
 Writing idiomatic Kotlin code can be hard, especially when just learning the language. More importantly, it's not always clear in which ways can existing Kotlin code be improved to become either shorter, faster, more readable or more maintainable.
 
