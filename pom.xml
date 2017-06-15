@@ -8,36 +8,9 @@
   <artifactId>kotlin-hints</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <packaging>pom</packaging>
-
-  <modules>
-    <module>kotlin-hints-function</module>
-    <module>kotlin-hints-lang</module>
-  </modules>
-
   <properties>
     <kotlin.version>1.1.2-4</kotlin.version>
   </properties>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.jetbrains.kotlin</groupId>
-        <artifactId>kotlin-stdlib-jre8</artifactId>
-        <version>${kotlin.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jetbrains.kotlin</groupId>
-        <artifactId>kotlin-test</artifactId>
-        <version>${kotlin.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jetbrains.kotlin</groupId>
-        <artifactId>kotlin-stdlib</artifactId>
-        <version>${kotlin.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -49,7 +22,11 @@
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-test</artifactId>
       <version>${kotlin.version}</version>
-      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
+      <version>${kotlin.version}</version>
     </dependency>
   </dependencies>
 
@@ -71,69 +48,11 @@
   </pluginRepositories>
 
   <build>
-    <sourceDirectory>kotlin-hints-function/src/main/kotlin</sourceDirectory>
-    <testSourceDirectory>kotlin-hints-function/src/test/kotlin</testSourceDirectory>
-    <pluginManagement>
-      <plugins>
-        <!-- Kotlin -->
-        <plugin>
-          <groupId>org.jetbrains.kotlin</groupId>
-          <artifactId>kotlin-maven-plugin</artifactId>
-          <version>${kotlin.version}</version>
-          <executions>
-            <execution>
-              <id>compile</id>
-              <phase>compile</phase>
-              <goals>
-                <goal>compile</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>test-compile</id>
-              <phase>test-compile</phase>
-              <goals>
-                <goal>test-compile</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
+    <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
 
-        <!-- Detekt -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
-          <executions>
-            <execution>
-              <!-- This can be run separately with mvn antrun:run@detekt -->
-              <id>detekt</id>
-              <phase>verify</phase>
-              <configuration>
-                <target name="detekt">
-                  <java taskname="detekt" dir="${basedir}" fork="true" failonerror="true"
-                        classname="io.gitlab.arturbosch.detekt.cli.Main" classpathref="maven.plugin.classpath">
-                    <arg value="-p"/>
-                    <arg value="${basedir}/src"/>
-                    <arg value="-f"/>
-                    <arg value=".*test.*"/>
-                    <arg value="--useTabs"/>
-                  </java>
-                </target>
-              </configuration>
-              <goals><goal>run</goal></goals>
-            </execution>
-          </executions>
-          <dependencies>
-            <dependency>
-              <groupId>io.gitlab.arturbosch.detekt</groupId>
-              <artifactId>detekt-cli</artifactId>
-              <version>1.0.0.M10.3</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
+      <!-- Kotlin -->
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>
@@ -154,6 +73,40 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Detekt -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <!-- This can be run separately with mvn antrun:run@detekt -->
+            <id>detekt</id>
+            <phase>verify</phase>
+            <configuration>
+              <target name="detekt">
+                <java taskname="detekt" dir="${basedir}" fork="true" failonerror="true"
+                      classname="io.gitlab.arturbosch.detekt.cli.Main" classpathref="maven.plugin.classpath">
+                  <arg value="-p"/>
+                  <arg value="${basedir}/src"/>
+                  <arg value="-f"/>
+                  <arg value=".*test.*"/>
+                  <arg value="--useTabs"/>
+                </java>
+              </target>
+            </configuration>
+            <goals><goal>run</goal></goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>io.gitlab.arturbosch.detekt</groupId>
+            <artifactId>detekt-cli</artifactId>
+            <version>1.0.0.M10.3</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
