@@ -1,4 +1,4 @@
-package com.igorini.kotlin.hints.lang
+package com.igorini.kotlin.hints.ranges
 
 // [Exclusive upper limit] -> Use `until` operator to exclude the upper limit.
 

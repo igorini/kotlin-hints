@@ -1,4 +1,4 @@
-package com.igorini.kotlin.hints.lang
+package com.igorini.kotlin.hints.`when`
 
 // [When] -> Allows to have `is` expressions
 

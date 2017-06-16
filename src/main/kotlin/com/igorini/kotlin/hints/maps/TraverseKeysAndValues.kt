@@ -1,4 +1,4 @@
-package com.igorini.kotlin.hints.lang
+package com.igorini.kotlin.hints.maps
 
 // [Traversing by key and value] -> Destructure a map
 
