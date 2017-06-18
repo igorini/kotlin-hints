@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.maps
 
-// [Traversing by key and value] -> Destructure a map
+// [Traversing by key and value] -> Destructure a map to use key and value directly
 
 // [FROM]
 fun fromTraverse(map: Map<Any, Any>) {
