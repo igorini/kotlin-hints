@@ -28,7 +28,7 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
 Use `until` operator to exclude the upper limit.
 
 ```kotlin
-// Printing out numbers from 1 up to but excluding 10
+// Printing out numbers from 1 up to but excluding 10 (half-open range)
 
 const val LIMIT = 10
 
