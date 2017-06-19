@@ -2,7 +2,9 @@
 
 kotlin-hints is a collection of Kotlin hints/idioms/patterns.
 
-Writing idiomatic Kotlin code can be hard, especially when just learning the language. More importantly, it's not always clear in which ways can existing Kotlin code be improved to become either shorter, faster, more readable or more maintainable.
+Writing idiomatic Kotlin code can be hard, especially when just learning the language.
+
+More importantly, it's not always clear in which ways can existing Kotlin code be improved to become either shorter, faster, more readable or more maintainable.
 
 There are good tools which help with that, including Intellij IDEA inspections and [detekt](https://github.com/arturbosch/detekt), the static code analysis tool.
 
