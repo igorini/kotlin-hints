@@ -7,30 +7,30 @@ package com.igorini.kotlin.hints.functions
  * specifying/removing an explicit return type
  */
 
-// [FROM]
+// [Before]
 
-fun fromSum(a: Int, b: Int): Int {
+fun beforeSum(a: Int, b: Int): Int {
     return a + b;
 }
 
-// [TO]
-fun toSum(a: Int, b: Int) = a + b
+// [After]
+fun afterSum(a: Int, b: Int) = a + b
 
 // -----
 // Same applies for `if` and `when`, as they are expressions in Kotlin
 
-// [FROM]
-fun fromMaxOf(a: Int, b: Int): Int {
+// [Before]
+fun beforeMaxOf(a: Int, b: Int): Int {
     return if (a > b) a else b
 }
 
-// [TO]
-fun toMaxOf(a: Int, b: Int) = if (a > b) a else b
+// [After]
+fun afterMaxOf(a: Int, b: Int) = if (a > b) a else b
 
 // -----
 
-// [FROM]
-fun fromCountryCode(country: String): String {
+// [Before]
+fun beforeCountryCode(country: String): String {
     return when(country){
         "China" -> "CHN"
         "Japan" -> "JPN"
@@ -38,8 +38,8 @@ fun fromCountryCode(country: String): String {
     }
 }
 
-// [TO]
-fun toCountryCode(country: String) = when(country){
+// [After]
+fun afterCountryCode(country: String) = when(country){
     "China" -> "CHN"
     "Japan" -> "JPN"
     else -> throw UnsupportedOperationException("Unknown country: $country")

@@ -6,12 +6,12 @@ package com.igorini.kotlin.hints.ranges
 
 const val LIMIT = 10
 
-// [FROM]
+// [Before]
 fun fromUpperLimit(){
     for (i in 1..(LIMIT - 1)) println(i)
 }
 
-// [TO]
+// [After]
 fun toUpperLimit() {
     for (i in 1 until LIMIT) println(i)
 }

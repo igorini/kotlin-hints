@@ -2,9 +2,9 @@ package com.igorini.kotlin.hints.functions
 
 // [Method Overload] -> Method overloads can be avoided by providing default values for parameters
 
-// [FROM]
-fun fromPrintNumber() = fromPrintNumber(0)
-fun fromPrintNumber(a: Int) = println("Number: $a")
+// [Before]
+fun beforePrintNumber() = beforePrintNumber(0)
+fun beforePrintNumber(a: Int) = println("Number: $a")
 
-// [TO]
-fun toPrintNumber(a: Int = 0) = println("Number: $a")
+// [After]
+fun afterPrintNumber(a: Int = 0) = println("Number: $a")
