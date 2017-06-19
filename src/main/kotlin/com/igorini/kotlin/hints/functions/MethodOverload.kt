@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.functions
 
-// [Method Overload] -> Method overloads can be avoided by providing default values for parameters
+// [Method Overload] -> Overloading methods with the reduced number of arguments can be avoided by providing default values for parameters
 
 // [Before]
 fun beforePrintNumber() = beforePrintNumber(0)
