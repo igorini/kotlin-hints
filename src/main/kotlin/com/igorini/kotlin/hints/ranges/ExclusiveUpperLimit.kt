@@ -7,11 +7,11 @@ package com.igorini.kotlin.hints.ranges
 const val LIMIT = 10
 
 // [Before]
-fun fromUpperLimit(){
+fun beforeUpperLimit(){
     for (i in 1..(LIMIT - 1)) println(i)
 }
 
 // [After]
-fun toUpperLimit() {
+fun afterUpperLimit() {
     for (i in 1 until LIMIT) println(i)
 }
