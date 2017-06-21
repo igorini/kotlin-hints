@@ -10,7 +10,7 @@ package com.igorini.kotlin.hints.functions
 // [Before]
 
 fun beforeSum(a: Int, b: Int): Int {
-    return a + b;
+    return a + b
 }
 
 // [After]
