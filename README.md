@@ -18,9 +18,28 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
 
 **Table of Contents**
 
-   * [kotlin-hints](#kotlin-hints)
-      * [Ranges](#ranges)
-         * [Exclusive upper limit](#exclusive-upper-limit)
+* [kotlin-hints](#kotlin-hints)
+  * [Functions](#functions)
+     * [Single expression in a block body](#single-expression-in-a-block-body)
+     * [Method overload](#method-overload)
+  * [When expressions](#when-expressions)
+     * [Type check](#type-check)
+  * [Maps](#maps)
+     * [Traverse keys and values](#traverse-keys-and-values)
+  * [Ranges](#ranges)
+     * [Exclusive upper limit](#exclusive-upper-limit)
+
+
+## Functions
+### Single expression in a block body
+
+### Method overload
+
+## When expressions
+### Type check
+
+## Maps
+### Traverse keys and values
 
 ## Ranges
 ### Exclusive upper limit
