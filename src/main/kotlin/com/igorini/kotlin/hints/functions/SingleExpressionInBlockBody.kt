@@ -17,7 +17,7 @@ fun beforeSum(a: Int, b: Int): Int {
 fun afterSum(a: Int, b: Int) = a + b
 
 // -----
-// Same applies for `if` and `when`, as they are expressions in Kotlin
+// Same applies for `if` and `when`, as these are expressions in Kotlin
 
 // [Before]
 fun beforeMaxOf(a: Int, b: Int): Int {

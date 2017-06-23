@@ -33,6 +33,53 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
 ## Functions
 ### Single expression in a block body
 
+Could be converted to the expression body. Return type could then be inferred.
+
+**NB**: Intellij IDEA has intentions for:
+* Converting between a block and expression body
+* Specifying/removing an explicit return type
+
+```kotlin
+// [Before]
+
+fun beforeSum(a: Int, b: Int): Int {
+    return a + b
+}
+
+// [After]
+fun afterSum(a: Int, b: Int) = a + b
+```
+
+Same applies for `if` and `when`, as these are expressions in Kotlin
+
+```kotlin
+// [Before]
+fun beforeMaxOf(a: Int, b: Int): Int {
+    return if (a > b) a else b
+}
+
+// [After]
+fun afterMaxOf(a: Int, b: Int) = if (a > b) a else b
+```
+
+```kotlin
+// [Before]
+fun beforeCountryCode(country: String): String {
+    return when(country){
+        "China" -> "CHN"
+        "Japan" -> "JPN"
+        else -> throw UnsupportedOperationException("Unknown country: $country")
+    }
+}
+
+// [After]
+fun afterCountryCode(country: String) = when(country){
+    "China" -> "CHN"
+    "Japan" -> "JPN"
+    else -> throw UnsupportedOperationException("Unknown country: $country")
+}
+```
+
 ### Method overload
 
 ## When expressions
