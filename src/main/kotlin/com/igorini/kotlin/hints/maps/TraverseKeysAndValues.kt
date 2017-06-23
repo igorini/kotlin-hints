@@ -4,14 +4,10 @@ package com.igorini.kotlin.hints.maps
 
 // [Before]
 fun beforeTraverse(map: Map<Any, Any>) {
-    for (entry in map) {
-        println("${entry.key} -> ${entry.value}")
-    }
+    map.forEach { entry -> println("${entry.key} -> ${entry.value}") }
 }
 
 // [After]
 fun afterTraverse(map: Map<Any, Any>) {
-    for ((k, v) in map) {
-        println("$k -> $v")
-    }
+    map.forEach { (k, v) -> println("$k -> $v") }
 }

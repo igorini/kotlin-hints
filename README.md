@@ -123,14 +123,10 @@ Destructure a map to use key and value directly
 
 ```kotlin
 // [Before]
-for (entry in map) {
-    println("${entry.key} -> ${entry.value}")
-}
+map.forEach { entry -> println("${entry.key} -> ${entry.value}") }
 
 // [After]
-for ((k, v) in map) {
-    println("$k -> $v")
-}
+map.forEach { (k, v) -> println("$k -> $v") }
 ```
 
 ## Ranges
