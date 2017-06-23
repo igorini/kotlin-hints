@@ -100,18 +100,16 @@ Type checks can be used in `when` expressions
 
 ```kotlin
 // [Before]
-fun printWithType(obj: Any) {
-    if (obj is String) {
-        println("Text: $obj")
-    } else if (obj is Number) {
-        println("Number: $obj")
-    } else {
-        println("Unknown: $obj")
-    }
+if (obj is String) {
+    println("Text: $obj")
+} else if (obj is Number) {
+    println("Number: $obj")
+} else {
+    println("Unknown: $obj")
 }
 
 // [After]
-fun printWithType(obj: Any) = when (obj) {
+when (obj) {
     is String -> println("Text: $obj")
     is Number -> println("Number: $obj")
     else -> println("Unknown: $obj")
