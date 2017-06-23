@@ -82,6 +82,17 @@ fun afterCountryCode(country: String) = when(country){
 
 ### Method overload
 
+Overloading methods with the reduced number of arguments can be avoided by providing *default values* for parameters
+
+```kotlin
+// [Before]
+fun beforePrintNumber() = beforePrintNumber(0)
+fun beforePrintNumber(a: Int) = println("Number: $a")
+
+// [After]
+fun afterPrintNumber(a: Int = 0) = println("Number: $a")
+```
+
 ## When expressions
 ### Type check
 
