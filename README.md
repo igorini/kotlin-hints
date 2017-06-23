@@ -42,29 +42,29 @@ Could be converted to the expression body. Return type could then be inferred.
 ```kotlin
 // [Before]
 
-fun beforeSum(a: Int, b: Int): Int {
+fun sum(a: Int, b: Int): Int {
     return a + b
 }
 
 // [After]
-fun afterSum(a: Int, b: Int) = a + b
+fun sum(a: Int, b: Int) = a + b
 ```
 
 Same applies for `if` and `when`, as these are expressions in Kotlin
 
 ```kotlin
 // [Before]
-fun beforeMaxOf(a: Int, b: Int): Int {
+fun maxOf(a: Int, b: Int): Int {
     return if (a > b) a else b
 }
 
 // [After]
-fun afterMaxOf(a: Int, b: Int) = if (a > b) a else b
+fun maxOf(a: Int, b: Int) = if (a > b) a else b
 ```
 
 ```kotlin
 // [Before]
-fun beforeCountryCode(country: String): String {
+fun countryCode(country: String): String {
     return when(country){
         "China" -> "CHN"
         "Japan" -> "JPN"
@@ -73,7 +73,7 @@ fun beforeCountryCode(country: String): String {
 }
 
 // [After]
-fun afterCountryCode(country: String) = when(country){
+fun countryCode(country: String) = when(country){
     "China" -> "CHN"
     "Japan" -> "JPN"
     else -> throw UnsupportedOperationException("Unknown country: $country")
@@ -86,11 +86,11 @@ Overloading methods with the reduced number of arguments can be avoided by provi
 
 ```kotlin
 // [Before]
-fun beforePrintNumber() = beforePrintNumber(0)
-fun beforePrintNumber(a: Int) = println("Number: $a")
+fun printNumber() = printNumber(0)
+fun printNumber(a: Int) = println("Number: $a")
 
 // [After]
-fun afterPrintNumber(a: Int = 0) = println("Number: $a")
+fun printNumber(a: Int = 0) = println("Number: $a")
 ```
 
 ## When expressions
@@ -100,7 +100,7 @@ Type checks can be used in `when` expressions
 
 ```kotlin
 // [Before]
-fun beforePrintWithType(obj: Any) {
+fun printWithType(obj: Any) {
     if (obj is String) {
         println("Text: $obj")
     } else if (obj is Number) {
@@ -111,7 +111,7 @@ fun beforePrintWithType(obj: Any) {
 }
 
 // [After]
-fun afterPrintWithType(obj: Any) = when (obj) {
+fun printWithType(obj: Any) = when (obj) {
     is String -> println("Text: $obj")
     is Number -> println("Number: $obj")
     else -> println("Unknown: $obj")
