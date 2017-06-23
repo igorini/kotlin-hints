@@ -96,6 +96,28 @@ fun afterPrintNumber(a: Int = 0) = println("Number: $a")
 ## When expressions
 ### Type check
 
+Type checks can be used in `when` expressions
+
+```kotlin
+// [Before]
+fun beforePrintWithType(obj: Any) {
+    if (obj is String) {
+        println("Text: $obj")
+    } else if (obj is Number) {
+        println("Number: $obj")
+    } else {
+        println("Unknown: $obj")
+    }
+}
+
+// [After]
+fun afterPrintWithType(obj: Any) = when (obj) {
+    is String -> println("Text: $obj")
+    is Number -> println("Number: $obj")
+    else -> println("Unknown: $obj")
+}
+```
+
 ## Maps
 ### Traverse keys and values
 

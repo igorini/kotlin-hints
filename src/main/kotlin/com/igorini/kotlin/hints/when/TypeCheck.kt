@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.`when`
 
-// [Type check] -> Type checks can be used in the `when` expression
+// [Type check] -> Type checks can be used in `when` expressions
 
 // [Before]
 fun beforePrintWithType(obj: Any) {
