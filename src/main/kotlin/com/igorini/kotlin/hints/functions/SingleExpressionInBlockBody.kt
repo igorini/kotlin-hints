@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.functions
 
-/* [Single expression in a block body] -> Could be converted to the expression body. Return type could be inferred.
+/* [Single expression in a block body] -> Could be converted to the expression body. Return type could then be inferred.
  *
  * NB: Intellij IDEA has intentions for:
  * converting between a block and expression body
