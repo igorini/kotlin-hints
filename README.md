@@ -121,6 +121,20 @@ fun afterPrintWithType(obj: Any) = when (obj) {
 ## Maps
 ### Traverse keys and values
 
+Destructure a map to use key and value directly
+
+```kotlin
+// [Before]
+for (entry in map) {
+    println("${entry.key} -> ${entry.value}")
+}
+
+// [After]
+for ((k, v) in map) {
+    println("$k -> $v")
+}
+```
+
 ## Ranges
 ### Exclusive upper limit
 
