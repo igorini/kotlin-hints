@@ -22,13 +22,14 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
+  * [Lambdas](#lambdas)
+     * [Single parameter](#single-parameter)
   * [When expressions](#when-expressions)
      * [Type check](#type-check)
   * [Maps](#maps)
      * [Traverse keys and values](#traverse-keys-and-values)
   * [Ranges](#ranges)
      * [Exclusive upper limit](#exclusive-upper-limit)
-
 
 ## Functions
 ### Single expression in a block body
@@ -91,6 +92,21 @@ fun printNumber(a: Int) = println("Number: $a")
 
 // [After]
 fun printNumber(a: Int = 0) = println("Number: $a")
+```
+
+## Lambdas
+### Single parameter
+
+Could use an implicit name `it` to simplify an expression.
+
+**NB**: Intellij IDEA has an intention that performs the following transformation.
+
+```kotlin
+// [Before]
+numbers.filter { n -> n > 0 }
+
+// [After]
+numbers.filter { it > 0 }
 ```
 
 ## When expressions
