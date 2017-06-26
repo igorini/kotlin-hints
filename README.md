@@ -19,6 +19,8 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
 **Table of Contents**
 
 * [kotlin-hints](#kotlin-hints)
+  * [Extensions](#extensions)
+     * [Utility class](#utility-class)
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
@@ -30,6 +32,25 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
      * [Traverse keys and values](#traverse-keys-and-values)
   * [Ranges](#ranges)
      * [Exclusive upper limit](#exclusive-upper-limit)
+
+## Extensions
+### Utility class
+
+Utility class could be replaced with function extensions.
+
+```kotlin
+// [Before]
+class StringUtils {
+    fun swapCase(str: String): String { ... }
+}
+```
+
+```kotlin
+// [After]
+fun String.swapCase(): String { ... }
+
+"Hello World".swapCase()
+```
 
 ## Functions
 ### Single expression in a block body
