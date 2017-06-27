@@ -130,6 +130,21 @@ numbers.filter { n -> n > 0 }
 numbers.filter { it > 0 }
 ```
 
+## If expressions
+### If not null
+
+Could be replaced with a safe access expression.
+
+**NB**: Intellij IDEA has intentions for converting between these two idioms.
+
+```kotlin
+// [Before]
+fun middleNameLength(middleName: String?) = if (middleName != null) middleName.length else null
+
+// [After]
+fun middleNameLength(middleName: String?) = middleName?.length
+```
+
 ## When expressions
 ### Type check
 
