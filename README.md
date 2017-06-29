@@ -26,12 +26,16 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
      * [Method overload](#method-overload)
   * [Lambdas](#lambdas)
      * [Single parameter](#single-parameter)
+  * [If expressions](#if-expressions)
+     * [If not null](#if-not-null)
   * [When expressions](#when-expressions)
      * [Type check](#type-check)
   * [Maps](#maps)
      * [Traverse keys and values](#traverse-keys-and-values)
   * [Ranges](#ranges)
      * [Exclusive upper limit](#exclusive-upper-limit)
+  * [With expressions](#with-expressions)
+     * [Multiple method calls on an object](#multiple-method-calls-on-an-object)
 
 ## Extensions
 ### Utility class
@@ -198,3 +202,23 @@ for (i in 1..(LIMIT - 1)) println(i)
 for (i in 1 until LIMIT) println(i)
 ```
 
+## With expressions
+### Multiple method calls on an object
+
+`with` expression could be used.
+
+```kotlin
+// [Before]
+fun printMenu(pizzas: List<String>) {
+    pizzas.forEach { println("Large $it") }
+    pizzas.forEach { println("Medium $it") }
+    pizzas.forEach { println("Small $it") }
+}
+
+// [After]
+fun printMenu(pizzas: List<String>) = with(pizzas) {
+    forEach { println("Large $it") }
+    forEach { println("Medium $it") }
+    forEach { println("Small $it") }
+}
+```
