@@ -1,6 +1,6 @@
 package com.igorini.kotlin.hints.imports
 
-import java.util.*
+import java.util.Date
 
 // [Name clash] -> Avoid writing a fully qualified name for the class in the scenario of an import name clash
 // by disambiguating a class with a keyword `as`
