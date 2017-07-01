@@ -12,7 +12,7 @@ This project attempts to go beyond and lists the patterns which are not covered 
 
 Some of the patterns are not covered by these tools by design, however the list will also contain the items which are not yet implemented in these tools.
 
-Most of the examples are taken from the [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)
+Most of the examples are taken from the [Kotlin Language Reference](https://kotlinlang.org/docs/reference/).
 
 ---
 
@@ -64,8 +64,8 @@ fun String.swapCase(): String { ... }
 Could be converted to the expression body. Return type could then be inferred.
 
 **NB**: Intellij IDEA has intentions for:
-* Converting between a block and expression body
-* Specifying/removing an explicit return type
+* Converting between a block and expression body.
+* Specifying/removing an explicit return type.
 
 ```kotlin
 // [Before]
@@ -78,7 +78,7 @@ fun sum(a: Int, b: Int): Int {
 fun sum(a: Int, b: Int) = a + b
 ```
 
-Same applies for `if` and `when`, as these are expressions in Kotlin
+Same applies for `if` and `when`, as these are expressions in Kotlin.
 
 ```kotlin
 // [Before]
@@ -110,7 +110,7 @@ fun countryCode(country: String) = when(country){
 
 ### Method overload
 
-Overloading methods with the reduced number of arguments can be avoided by providing *default values* for parameters
+Overloading methods with the reduced number of arguments can be avoided by providing *default values* for parameters.
 
 ```kotlin
 // [Before]
@@ -139,7 +139,7 @@ numbers.filter { it > 0 }
 ## Imports
 ### Name clash
 
-Avoid writing a fully qualified name for the class in the scenario of an import name clash by disambiguating a class with a keyword `as`
+Avoid writing a fully qualified name for the class in the scenario of an import name clash by disambiguating a class with a keyword `as`.
 
 ```kotlin
 val utilDate: Date
@@ -170,7 +170,7 @@ fun middleNameLength(middleName: String?) = middleName?.length
 ## When expressions
 ### Type check
 
-Type checks can be used in `when` expressions
+Type checks can be used in `when` expressions.
 
 ```kotlin
 // [Before]
@@ -193,7 +193,7 @@ when (obj) {
 ## Maps
 ### Traverse keys and values
 
-Destructure a map to use key and value directly
+Destructure a map to use key and value directly.
 
 ```kotlin
 // [Before]
