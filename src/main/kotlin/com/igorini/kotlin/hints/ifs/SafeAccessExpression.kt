@@ -4,6 +4,7 @@ package com.igorini.kotlin.hints.ifs
  *
  * NB: Intellij IDEA has intentions for converting between these two idioms.
  */
+
 // [Before]
 fun beforeMiddleNameLength(middleName: String?) = if (middleName != null) middleName.length else null
 
