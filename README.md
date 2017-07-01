@@ -26,6 +26,8 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
      * [Method overload](#method-overload)
   * [Lambdas](#lambdas)
      * [Single parameter](#single-parameter)
+  * [Imports](#imports)
+     * [Name clash](#name-clash)
   * [If expressions](#if-expressions)
      * [If not null](#if-not-null)
   * [When expressions](#when-expressions)
@@ -132,6 +134,22 @@ numbers.filter { n -> n > 0 }
 
 // [After]
 numbers.filter { it > 0 }
+```
+
+## Imports
+### Name clash
+
+Avoid writing a fully qualified name for the class in the scenario of an import name clash by disambiguating a class with a keyword `as`
+
+```kotlin
+val utilDate: Date
+val sqlDate: java.sql.Date
+
+// [After]
+import java.sql.Date as SqlDate
+...
+val utilDate: Date
+val sqlDate: SqlDate
 ```
 
 ## If expressions
