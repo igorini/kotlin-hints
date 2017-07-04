@@ -21,6 +21,7 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
 * [kotlin-hints](#kotlin-hints)
   * [Extensions](#extensions)
      * [Utility class](#utility-class)
+     * [Extension property](#extension-property)
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
@@ -56,6 +57,21 @@ class StringUtils {
 fun String.swapCase(): String { ... }
 
 "Hello World".swapCase()
+```
+
+### Extension property
+
+Commonly used expressions made on a class property can be added to a class as an extension property instead.
+
+```kotlin
+// [Before]
+println("Last index: ${list.size - 1}")
+
+// [After]
+val <T> List<T>.lastIndex: Int
+    get() = size - 1
+
+println("Last index: ${list.lastIndex}")
 ```
 
 ## Functions
