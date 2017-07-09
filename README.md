@@ -29,6 +29,8 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
      * [Single parameter](#single-parameter)
   * [Imports](#imports)
      * [Name clash](#name-clash)
+  * [Data classes](#data-classes)
+     * [Destructure](#destructure)
   * [If expressions](#if-expressions)
      * [If not null](#if-not-null)
   * [When expressions](#when-expressions)
@@ -166,6 +168,27 @@ import java.sql.Date as SqlDate
 ...
 val utilDate: Date
 val sqlDate: SqlDate
+```
+
+## Data classes
+### Destructure
+
+Could destructure a data class when only it's internals are used within a scope.
+
+```kotlin
+data class User(val name: String = "", val age: Int = 0)
+
+val alice = User("Alice", 22)
+val ageLimit = 18
+
+// [Before]
+println("Name: $alice.name, Age: $alice.age")
+if (alice.age >= ageLimit) println("$alice.name is over $ageLimit")
+
+// [After]
+val (name, age) = alice
+println("Name: $name, Age: $age")
+if (age >= ageLimit) println("$name is over $ageLimit")
 ```
 
 ## If expressions
