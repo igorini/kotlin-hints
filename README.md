@@ -25,6 +25,7 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
+     * [Infix function](#infix-function)
   * [Lambdas](#lambdas)
      * [Single parameter](#single-parameter)
   * [Imports](#imports)
@@ -137,6 +138,19 @@ fun printNumber(a: Int) = println("Number: $a")
 
 // [After]
 fun printNumber(a: Int = 0) = println("Number: $a")
+```
+
+### Infix function
+
+Allows using functions in the form of `a rem b` instead of `a.rem(b)`.
+
+```kotlin
+// [Before]
+1.rem(2)
+
+// [After]
+infix fun Int.rem(num: Int) = this.rem(num)
+1 rem 2
 ```
 
 ## Lambdas
