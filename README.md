@@ -25,6 +25,7 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
+     * [Named arguments](#named-arguments)
      * [Infix function](#infix-function)
   * [Lambdas](#lambdas)
      * [Single parameter](#single-parameter)
@@ -138,6 +139,27 @@ fun printNumber(a: Int) = println("Number: $a")
 
 // [After]
 fun printNumber(a: Int = 0) = println("Number: $a")
+```
+
+### Named arguments
+
+Function parameters can be named when calling a function.
+
+```kotlin
+fun reformat(str: String,
+             normalizeCase: Boolean = true,
+             upperCaseFirstLetter: Boolean = true,
+             divideByCamelHumps: Boolean = false,
+             wordSeparator: Char = ' ') {
+    ...
+}
+
+// [Before]
+
+reformat("hello,world", false, false, true, ',')
+
+// [After]
+reformat("hello,world", normalizeCase = false, upperCaseFirstLetter = false, divideByCamelHumps = true, wordSeparator = ',')
 ```
 
 ### Infix function
