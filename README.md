@@ -25,6 +25,7 @@ Most of the examples are taken from the [Kotlin Language Reference](https://kotl
   * [Functions](#functions)
      * [Single expression in a block body](#single-expression-in-a-block-body)
      * [Method overload](#method-overload)
+     * [Local function](#local-function)
      * [Named arguments](#named-arguments)
      * [Infix function](#infix-function)
   * [Lambdas](#lambdas)
@@ -139,6 +140,32 @@ fun printNumber(a: Int) = println("Number: $a")
 
 // [After]
 fun printNumber(a: Int = 0) = println("Number: $a")
+```
+
+### Local function
+
+Functions can be nested. Inner function can access local variables of an outer function.
+Could be used when a helper function should be only visible to a single caller.
+
+```kotlin
+// [Before]
+fun printReceipt(name: String, price: BigDecimal, bonusPoints: Int) {
+    printProduct(name, price)
+    printDiscount(bonusPoints)
+}
+
+private fun printProduct(name: String, price: BigDecimal) = println("Name: $name, Price: $price")
+
+private fun printDiscount(bonusPoints: Int) = println("Collected $bonusPoints bonus points")
+
+// [After]
+fun printReceipt(name: String, price: BigDecimal, bonusPoints: Int) {
+    fun printProduct() = println("Name: $name, Price: $price")
+    fun printDiscount() = println("Collected $bonusPoints bonus points")
+
+    printProduct()
+    printDiscount()
+}
 ```
 
 ### Named arguments
