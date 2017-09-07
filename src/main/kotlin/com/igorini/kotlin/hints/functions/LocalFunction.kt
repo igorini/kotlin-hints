@@ -11,9 +11,9 @@ fun beforePrintReceipt(name: String, price: BigDecimal, bonusPoints: Int) {
     beforePrintDiscount(bonusPoints)
 }
 
-fun beforePrintProduct(name: String, price: BigDecimal) = println("Name: $name, Price: $price")
+private fun beforePrintProduct(name: String, price: BigDecimal) = println("Name: $name, Price: $price")
 
-fun beforePrintDiscount(bonusPoints: Int) = println("Collected $bonusPoints bonus points")
+private fun beforePrintDiscount(bonusPoints: Int) = println("Collected $bonusPoints bonus points")
 
 // [After]
 fun afterPrintReceipt(name: String, price: BigDecimal, bonusPoints: Int) {
