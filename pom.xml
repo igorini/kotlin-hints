@@ -94,7 +94,7 @@
           <dependency>
             <groupId>io.gitlab.arturbosch.detekt</groupId>
             <artifactId>detekt-cli</artifactId>
-            <version>1.0.0.RC3</version>
+            <version>1.0.0.M11</version>
           </dependency>
         </dependencies>
       </plugin>
